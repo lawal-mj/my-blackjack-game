@@ -29,7 +29,12 @@ button {
   border: none;
   margin-bottom: 10px;
   border-radius: 7px;
+  font-weight: bold;
 }
+
+button:hover {
+    background-color: yellow;
+  }
 
 .buttons {
   display: flex;
