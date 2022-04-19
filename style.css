@@ -48,3 +48,8 @@ button:hover {
   flex-wrap: wrap;
   justify-content: center;
 }
+
+
+.inner-text {
+  color: yellow;
+}

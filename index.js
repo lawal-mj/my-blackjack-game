@@ -50,11 +50,11 @@ function newCard() {
 
 function changeStatus() {
     if (sum === 21) {
-        statusLine.textContent = "STATUS: Yay, Blackjack..wanna play a new game?" ;       
+        statusLine.textContent = "Yay, Blackjack..wanna play a new game?" ;       
     }else if ( sum < 21) {
-        statusLine.textContent = "STATUS: Want another card?";
+        statusLine.textContent = "Want another card?";
     }else {
-        statusLine.textContent = "STATUS: Oops, you lost..wanna play a new game?";    }
+        statusLine.textContent = "Oops, you lost..wanna play a new game?";    }
 }
 
 
@@ -65,8 +65,8 @@ function renderGame() {
         word += cards[i] + ", "
     }
     console.log(word)
-    scoreLine.textContent = "SCORE: " + sum
-    cardLine.textContent = `CURRENT CARDS: ${word}`
+    scoreLine.textContent =  sum
+    cardLine.textContent = word
     
 }
 
