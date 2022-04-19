@@ -13,13 +13,11 @@ function startGame () {
     // console.log("The game has started")
     firstCard = Math.floor(Math.random() * 9);
     secondCard = Math.floor(Math.random() * 9);
-
     sum = firstCard + secondCard
 
-    scoreLine.textContent = "your score is " + sum
-    cardLine.textContent = `CURRENT CARDS: ${firstCard}, ${secondCard}`
+    // editing the details on the page
     cards = [firstCard, secondCard]
-    console.log(cards)
+    // console.log(cards)
     renderGame()
 
     checkScore()
@@ -31,6 +29,12 @@ function newCard() {
     let card = Math.floor(Math.random() * 9);
     cards.push(card)
     console.log(cards)
+
+    //defining updaye sum here because "card" only exists here
+    function updateScore() {
+        sum = sum + card
+    }
+    updateScore()
     renderGame()
 
 }
@@ -50,8 +54,11 @@ function checkScore() {
 function renderGame() {
     let word = ''
     for (let i = 0; i< cards.length; i++) {
-        word += cards[i] + " "
+        word += cards[i] + ", "
     }
     console.log(word)
+    scoreLine.textContent = "SCORE: " + sum
+    cardLine.textContent = `CURRENT CARDS: ${word}`
     
 }
+
