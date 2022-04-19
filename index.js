@@ -3,6 +3,8 @@ let secondCard;
 let cards = [firstCard, secondCard]
 let sum;
 
+// let x = Math.floor((Math.random() * 10) + 1)
+
 
 // Grabbing the display lines to edit later on
 let statusLine = document.getElementById("status-line");
@@ -11,8 +13,8 @@ let scoreLine = document.getElementById("score-line");
 
 function startGame () {
     // console.log("The game has started")
-    firstCard = Math.floor(Math.random() * 9);
-    secondCard = Math.floor(Math.random() * 9);
+    firstCard = Math.floor((Math.random() * 10) + 1);
+    secondCard = Math.floor((Math.random() * 10) + 1);
     sum = firstCard + secondCard
 
     // editing the details on the page
@@ -20,33 +22,39 @@ function startGame () {
     // console.log(cards)
     renderGame()
 
-    checkScore()
+    changeStatus()
 }
 
 
 function newCard() {
-    // console.log("connected")
-    let card = Math.floor(Math.random() * 9);
-    cards.push(card)
-    console.log(cards)
+    if (sum === 21 || sum > 21) {
+        null;
+    }else {
+        let card = Math.floor((Math.random() * 10) + 1);
+        cards.push(card)
+        console.log(cards)
+    
+        //defining updaye sum here because "card" only exists here
+        function updateScore() {
+            sum = sum + card
+        }
+        updateScore()
+        changeStatus()
+        renderGame()
 
-    //defining updaye sum here because "card" only exists here
-    function updateScore() {
-        sum = sum + card
     }
-    updateScore()
-    renderGame()
+
 
 }
 
 
-function checkScore() {
+function changeStatus() {
     if (sum === 21) {
-        statusLine.textContent = "STATUS: Yay, Blackjack" ;       
+        statusLine.textContent = "STATUS: Yay, Blackjack..wanna play a new game?" ;       
     }else if ( sum < 21) {
         statusLine.textContent = "STATUS: Want another card?";
     }else {
-        statusLine.textContent = "STATUS: Oops, you lost";    }
+        statusLine.textContent = "STATUS: Oops, you lost..wanna play a new game?";    }
 }
 
 

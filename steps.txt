@@ -1,7 +1,0 @@
-two cards are automatically assigned to the user and if the sum of the cards is less than 21..the user is allowed to pick another card
-
-
-// steps 
-
-1. create a startgame function that assigns the two cards to the user
-2. make the generate random numbers
